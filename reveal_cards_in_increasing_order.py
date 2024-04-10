@@ -8,9 +8,9 @@ class Solution(object):
         deck.sort()
         r = [0] * len(deck)
         while len(deck) > 0:
-            r[ilist[0]] = deck[0]
-            ilist.remove(ilist[0])
-            deck.remove(deck[0])
+            ind = ilist.pop(0)
+            r[ind] = deck[0]
+            deck.pop(0)
             if not len(ilist) > 0:
                 continue
             temp = ilist.pop(0)
