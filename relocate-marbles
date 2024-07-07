@@ -1,0 +1,9 @@
+class Solution:
+    def relocateMarbles(self, nums: List[int], moveFrom: List[int], moveTo: List[int]) -> List[int]:
+        r = set(nums)
+        for x in range(len(moveFrom)):
+            r.discard(moveFrom[x])
+            r.add(moveTo[x])
+        r = list(r)
+        r.sort()
+        return r
