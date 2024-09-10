@@ -1,0 +1,9 @@
+class Solution:
+    def minOperations(self, nums: List[int]) -> int:
+        flipped = [0,1]
+        r = 0
+        for x in nums:
+            if (x == 0 and flipped[0] == 0) or (x == 1 and flipped[0] == 1):
+                r+=1
+                flipped.append(flipped.pop(0))
+        return r
